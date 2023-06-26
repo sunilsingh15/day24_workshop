@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Order</title>
+</head>
+
+<body>
+    <h2>Add New Order</h2>
+    <form action="/order" method="post">
+        <table>
+            <div th:object="${order}">
+                <tr>
+                    <td>
+                        Order Date:
+                    </td>
+                    <td>
+                        <input type="date" name="orderDate" th:text="*{orderDate}">
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        Customer Name:
+                    </td>
+                    <td>
+                        <input type="text" name="customerName" th:text="*{customerName}">
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        Ship Address:
+                    </td>
+                    <td>
+                        <input type="text" name="shipAddress" th:text="*{shipAddress}">
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        Notes:
+                    </td>
+                    <td>
+                        <textarea name="notes"cols="30" rows="10" th:text="*{notes}"></textarea>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        Tax:
+                    </td>
+                    <td>
+                        <input type="number" name="tax" th:text="*{tax}" max="1" min="0.05">
+                    </td>
+                </tr>
+            </div>
+            <div th:object="${orderDetails}"></div>
+            <tr>
+                <td>
+                    Product:
+                </td>
+                <td>
+                    <input type="text" name="product" th:text="*{product}">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Unit Price:
+                </td>
+                <td>
+                    <input type="number" name="unitPrice" th:text="*{unitPrice}">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Discount:
+                </td>
+                <td>
+                    <input type="number" name="discount" th:text="*{discount}">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Quantity:
+                </td>
+                <td>
+                    <input type="number" name="quantity" th:text="*{quantity}">
+                </td>
+            </tr>
+            <tr>
+                <td>
+
+                </td>
+                <td>
+                    <button type="submit">Submit</button>
+                </td>
+            </tr>
+        </table>
+    </form>
+</body>
+
+</html>
